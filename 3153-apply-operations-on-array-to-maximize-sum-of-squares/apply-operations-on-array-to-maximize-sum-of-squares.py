@@ -2,7 +2,6 @@ class Solution:
     def maxSum(self, nums: List[int], k: int) -> int:
         MOD = 10**9 + 7
         
-        # Step 1: Count occurrences of 1s at each of the 32 bit positions
         bit_counts = [0] * 32
         for num in nums:
             for i in range(32):
@@ -11,7 +10,6 @@ class Solution:
                     
         ans = 0
         
-        # Step 2 & 3: Greedily construct the k largest possible elements
         for _ in range(k):
             current_num = 0
             for i in range(32):
@@ -19,7 +17,7 @@ class Solution:
                     current_num |= (1 << i)
                     bit_counts[i] -= 1
             
-            # Sum the squares of the elements modulo 10^9 + 7
+
             ans = (ans + current_num * current_num) % MOD
             
         return ans
