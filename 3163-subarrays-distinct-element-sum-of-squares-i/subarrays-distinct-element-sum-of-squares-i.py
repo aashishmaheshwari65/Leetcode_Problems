@@ -2,7 +2,7 @@ class Solution:
     def sumCounts(self, nums: list[int]) -> int:
         n = len(nums)
         total_sum = 0
-        MOD = 10**9 + 7  # Include if large input constraint requires modulo
+        MOD = 10**9 + 7  
         
         for i in range(n):
             distinct_elements = set()
