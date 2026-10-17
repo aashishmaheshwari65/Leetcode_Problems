@@ -1,4 +1,3 @@
-
 class Solution:
     def minSwaps(self, nums: List[int]) -> int:
         def digit_sum(n):
@@ -10,10 +9,10 @@ class Solution:
 
         n = len(nums)
 
-        # Sort by digit sum, then by number
+
         sorted_nums = sorted(nums, key=lambda x: (digit_sum(x), x))
 
-        # Map each number to its target index
+
         target_index = {num: i for i, num in enumerate(sorted_nums)}
 
         visited = [False] * n
@@ -23,7 +22,7 @@ class Solution:
             if visited[i] or target_index[nums[i]] == i:
                 continue
 
-            # Count the length of this cycle
+
             cycle_size = 0
             j = i
 
