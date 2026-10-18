@@ -3,7 +3,6 @@ class Solution:
         MOD = 10**9 + 7
         n = len(nums)
 
-        # Precompute Pascal's triangle for combinations.
         comb = [[0] * n for _ in range(n)]
         for i in range(n):
             comb[i][0] = comb[i][i] = 1
