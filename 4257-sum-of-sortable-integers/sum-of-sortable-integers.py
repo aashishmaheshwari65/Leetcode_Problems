@@ -6,7 +6,6 @@ class Solution:
         def is_rotation(a, b):
             m = len(a)
 
-            # Build the KMP prefix table for b
             pi = [0] * m
             j = 0
 
@@ -19,7 +18,7 @@ class Solution:
 
                 pi[i] = j
 
-            # Search for b inside a+a, without the final element
+
             j = 0
             for x in a + a[:-1]:
                 while j > 0 and x != b[j]:
