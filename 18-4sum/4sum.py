@@ -5,12 +5,12 @@ class Solution:
         result = []
 
         for i in range(n - 3):
-            # Skip duplicate first elements
+
             if i > 0 and nums[i] == nums[i - 1]:
                 continue
 
             for j in range(i + 1, n - 2):
-                # Skip duplicate second elements
+                
                 if j > i + 1 and nums[j] == nums[j - 1]:
                     continue
 
@@ -32,11 +32,11 @@ class Solution:
                         left += 1
                         right -= 1
 
-                        # Skip duplicate third elements
+                        
                         while left < right and nums[left] == nums[left - 1]:
                             left += 1
 
-                        # Skip duplicate fourth elements
+                        
                         while left < right and nums[right] == nums[right + 1]:
                             right -= 1
 
