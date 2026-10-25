@@ -1,4 +1,3 @@
-
 class Solution:
     def closedIsland(self, grid: list[list[int]]) -> int:
         rows, cols = len(grid), len(grid[0])
@@ -10,14 +9,14 @@ class Solution:
             if grid[r][c] == 1:
                 return
 
-            grid[r][c] = 1  # Mark as visited
+            grid[r][c] = 1
 
             dfs(r + 1, c)
             dfs(r - 1, c)
             dfs(r, c + 1)
             dfs(r, c - 1)
 
-        # Remove all islands connected to the boundary
+    
         for r in range(rows):
             dfs(r, 0)
             dfs(r, cols - 1)
@@ -26,7 +25,7 @@ class Solution:
             dfs(0, c)
             dfs(rows - 1, c)
 
-        # Count the remaining closed islands
+
         count = 0
 
         for r in range(1, rows - 1):
