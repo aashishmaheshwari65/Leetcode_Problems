@@ -1,4 +1,3 @@
-
 class Solution:
     def palindromePath(self, n: int, edges: List[List[int]],
                        s: str, queries: List[str]) -> List[bool]:
@@ -7,10 +6,10 @@ class Solution:
             graph[u].append(v)
             graph[v].append(u)
 
-        # Each character is represented by one bit.
+        
         masks = [1 << (ord(c) - ord('a')) for c in s]
 
-        # Build parent, depth, and traversal order iteratively.
+        
         parent = [-1] * n
         depth = [0] * n
         parent[0] = 0
@@ -27,7 +26,7 @@ class Solution:
                 depth[v] = depth[u] + 1
                 stack.append(v)
 
-        # Calculate subtree sizes and heavy children.
+
         size = [1] * n
         heavy = [-1] * n
 
@@ -40,7 +39,7 @@ class Solution:
                         largest = size[v]
                         heavy[u] = v
 
-        # Heavy-Light Decomposition.
+        
         head = [0] * n
         pos = [0] * n
         timer = 0
@@ -60,7 +59,7 @@ class Solution:
 
                 u = heavy[u]
 
-        # XOR segment tree.
+    
         seg = [0] * (2 * n)
 
         for u in range(n):
@@ -79,7 +78,7 @@ class Solution:
                 p //= 2
 
         def range_xor(l, r):
-            # XOR over the half-open interval [l, r).
+    
             result = 0
             l += n
             r += n
@@ -127,7 +126,7 @@ class Solution:
                 v = int(parts[2])
                 mask = path_xor(u, v)
 
-                # At most one character can have odd frequency.
+        
                 answers.append((mask & (mask - 1)) == 0)
 
         return answers
