@@ -1,6 +1,4 @@
 
-from typing import List
-
 class Solution:
     def palindromePath(self, n: int, edges: List[List[int]],
                        s: str, queries: List[str]) -> List[bool]:
