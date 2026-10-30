@@ -9,11 +9,10 @@ class Solution:
         for u, v, w in edges:
             graph[u].append((v, w))
 
-        # State: (cost, node, last_character, consecutive_count)
+
         start_char = labels[0]
         heap = [(0, 0, start_char, 1)]
 
-        # Minimum cost for each state
         dist = {(0, start_char, 1): 0}
 
         while heap:
@@ -42,10 +41,7 @@ class Solution:
                 new_state = (nxt, char, new_count)
 
                 if new_cost < dist.get(new_state, float('inf')):
-                    dist[new_state] = new_cost
-                    heapq.heappush(
-                        heap,
-                        (new_cost, nxt, char, new_count)
-                    )
+                    dist[new_state] = new_cost 
+                    heapq.heappush(heap,(new_cost, nxt, char, new_count))
 
         return -1
