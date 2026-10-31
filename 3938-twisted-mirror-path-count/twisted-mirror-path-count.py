@@ -2,9 +2,9 @@ class Solution:
     def uniquePaths(self, grid: List[List[int]]) -> int:
         MOD = 10**9 + 7
         m, n = len(grid), len(grid[0])
-        E0 = [[0] * n for _ in range(m)]  # entering while moving right
-        E1 = [[0] * n for _ in range(m)]  # entering while moving down
-        S = [[0] * n for _ in range(m)]   # settled on non-mirror cell
+        E0 = [[0] * n for _ in range(m)]  
+        E1 = [[0] * n for _ in range(m)]  
+        S = [[0] * n for _ in range(m)]   
 
         for i in range(m):
             for j in range(n):
