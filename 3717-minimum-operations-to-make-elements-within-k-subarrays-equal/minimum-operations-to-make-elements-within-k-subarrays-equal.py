@@ -1,7 +1,3 @@
-
-from typing import List
-from bisect import bisect_left
-
 class Solution:
     def minOperations(self, nums: List[int], x: int, k: int) -> int:
         n = len(nums)
