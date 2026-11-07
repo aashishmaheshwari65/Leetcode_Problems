@@ -1,5 +1,3 @@
-import heapq
-
 class Solution:
     def assignTasks(self, servers: list[int], tasks: list[int]) -> list[int]:
         free = [(w, i) for i, w in enumerate(servers)]
