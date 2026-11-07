@@ -9,12 +9,12 @@ class Solution:
         for j, task in enumerate(tasks):
             current_time = max(current_time if j > 0 else 0, j)
 
-            # Release all servers available at current time
+    
             while busy and busy[0][0] <= current_time:
                 end, w, i = heapq.heappop(busy)
                 heapq.heappush(free, (w, i))
 
-            # If no server is free, wait
+        
             if not free:
                 current_time = busy[0][0]
 
@@ -22,7 +22,7 @@ class Solution:
                     end, w, i = heapq.heappop(busy)
                     heapq.heappush(free, (w, i))
 
-            # Assign task
+        
             w, i = heapq.heappop(free)
             ans.append(i)
 
