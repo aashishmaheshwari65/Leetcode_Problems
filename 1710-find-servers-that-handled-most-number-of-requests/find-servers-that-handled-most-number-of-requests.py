@@ -1,6 +1,3 @@
-
-import heapq
-
 class Solution:
     def busiestServers(self, k: int, arrival: list[int], load: list[int]) -> list[int]:
 
@@ -53,20 +50,18 @@ class Solution:
 
         for i in range(len(arrival)):
 
-            # Release servers that have completed their requests
             while busy and busy[0][0] <= arrival[i]:
                 end, server = heapq.heappop(busy)
                 update(1, 0, k - 1, server, 1)
 
             start = i % k
 
-            # Find next available server
             server = find(1, 0, k - 1, start, k - 1)
 
             if server == -1:
                 server = find(1, 0, k - 1, 0, start - 1)
 
-            # Drop request if all servers are busy
+    
             if server == -1:
                 continue
 
