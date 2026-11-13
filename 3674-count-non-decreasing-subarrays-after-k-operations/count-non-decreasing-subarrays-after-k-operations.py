@@ -13,7 +13,7 @@ class Solution:
             x = nums[left]
             count = 1
 
-            # Update prefix maximums
+        
             while dq and dq[0][0] < x:
                 val, cnt = dq.popleft()
                 cost += (x - val) * cnt
@@ -21,7 +21,7 @@ class Solution:
 
             dq.appendleft([x, count])
 
-            # Shrink window if cost exceeds k
+            
             while cost > k:
                 val, cnt = dq[-1]
 
