@@ -1,7 +1,3 @@
-
-from collections import deque
-from typing import List
-
 class Solution:
     def countNonDecreasingSubarrays(self, nums: List[int], k: int) -> int:
 
