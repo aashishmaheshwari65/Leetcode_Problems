@@ -17,7 +17,6 @@ class Solution:
             if entering:
                 prev = last[c]
 
-     
                 if prev != -1:
                     new_parent = prev
                 else:
@@ -27,17 +26,12 @@ class Solution:
                     new_children[new_parent].append(node)
 
                 last[c] = node
-
                 stack.append((node, False, prev))
 
-                
                 for child in reversed(children[node]):
                     stack.append((child, True, -1))
-
             else:
                 last[c] = prev
-
-
         order = []
         stack = [0]
 
@@ -47,7 +41,6 @@ class Solution:
 
             for child in new_children[node]:
                 stack.append(child)
-
         ans = [1] * n
         for node in reversed(order):
             for child in new_children[node]:
