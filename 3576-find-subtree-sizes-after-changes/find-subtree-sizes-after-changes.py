@@ -3,13 +3,11 @@ class Solution:
     def findSubtreeSizes(self, parent: List[int], s: str) -> List[int]:
         n = len(parent)
 
-        # Build original tree
         children = [[] for _ in range(n)]
 
         for i in range(1, n):
             children[parent[i]].append(i)
 
-        # Build final tree
         new_children = [[] for _ in range(n)]
         last = [-1] * 26
 
