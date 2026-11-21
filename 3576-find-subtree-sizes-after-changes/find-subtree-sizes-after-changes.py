@@ -20,7 +20,7 @@ class Solution:
             if entering:
                 prev = last[c]
 
-                # Find closest ancestor with same character
+     
                 if prev != -1:
                     new_parent = prev
                 else:
@@ -31,17 +31,16 @@ class Solution:
 
                 last[c] = node
 
-                # Exit event restores ancestor state
                 stack.append((node, False, prev))
 
-                # Visit original children
+                
                 for child in reversed(children[node]):
                     stack.append((child, True, -1))
 
             else:
                 last[c] = prev
 
-        # Calculate subtree sizes in final tree
+
         order = []
         stack = [0]
 
