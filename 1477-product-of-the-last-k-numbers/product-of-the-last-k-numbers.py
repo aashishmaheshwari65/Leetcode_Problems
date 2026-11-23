@@ -1,4 +1,3 @@
-
 class ProductOfNumbers:
 
     def __init__(self):
@@ -13,5 +12,4 @@ class ProductOfNumbers:
     def getProduct(self, k: int) -> int:
         if k >= len(self.prefix):
             return 0
-
         return self.prefix[-1] // self.prefix[-k-1]
