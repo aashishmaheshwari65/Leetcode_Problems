@@ -1,6 +1,3 @@
-from math import gcd, lcm
-from functools import reduce
-
 class Solution:
     def maxLength(self, nums: List[int]) -> int:
         n = len(nums)
