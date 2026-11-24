@@ -1,4 +1,3 @@
-
 from math import gcd, lcm
 from functools import reduce
 
@@ -11,7 +10,6 @@ class Solution:
             prod = 1
             g = 0
             l = 1
-
             for j in range(i, n):
                 x = nums[j]
 
@@ -21,5 +19,4 @@ class Solution:
 
                 if prod == g * l:
                     ans = max(ans, j - i + 1)
-
         return ans
