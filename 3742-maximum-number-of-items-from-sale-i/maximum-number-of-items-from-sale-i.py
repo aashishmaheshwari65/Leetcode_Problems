@@ -1,10 +1,8 @@
-from typing import List
-
 class Solution:
     def maximumSaleItems(self, items: List[List[int]], budget: int) -> int:
         n = len(items)
 
-        # Calculate free copies received from buying each item type
+
         free = [0] * n
 
         for i in range(n):
@@ -12,7 +10,7 @@ class Solution:
                 if i != j and items[j][0] % items[i][0] == 0:
                     free[i] += 1
 
-        # dp[b] = maximum items obtainable with budget at most b
+
         dp = [0] * (budget + 1)
 
         for i in range(n):
